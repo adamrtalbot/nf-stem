@@ -1,0 +1,6 @@
+prefix: adamrtalbot
+skip:
+- ci
+- github_badges
+- igenomes
+- nf_core_configs
