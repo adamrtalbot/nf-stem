@@ -10,23 +10,20 @@
 nextflow.enable.dsl = 2
 
 
-include { validateParameters; paramsHelp; paramsSummaryLog; paramsSummaryMap; fromSamplesheet } from 'plugin/nf-validation'
+include { validateParameters; paramsSummaryLog; fromSamplesheet } from 'plugin/nf-validation'
 
-if ( params.citation ) {
-    // Print citation for nf-core
-    def citation = WorkflowMain.citation(workflow)
-    log.info citation
-}
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    IMPORT MODULES AND SUBWORKFLOWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
 
-// Print help message if needed
-if (params.help) {
-    def String command = "nextflow run ${workflow.manifest.name} --input samplesheet.csv -profile docker"
-    log.info paramsHelp(command)
-    System.exit(0)
-}
+ include { INITIALISE_WORKFLOW } from './subworkflows/local/initialise/main'
+ include { FQ_LINT             } from './modules/nf-core/fq/lint/main'
 
-// Initialise parameter values
-WorkflowMain.initialise(workflow, params, log)
+
+// Print parameter summary log to screen before running
+log.info paramsSummaryLog(workflow)
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,26 +31,11 @@ WorkflowMain.initialise(workflow, params, log)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT MODULES
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
- include { FQ_LINT } from './modules/nf-core/fq/lint/main'
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    NAMED WORKFLOW
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-// Print parameter summary log to screen before running
-log.info paramsSummaryLog(workflow)
-
 workflow NFSTEM {
 
     ch_versions = Channel.empty()
+
+    INITIALISE_WORKFLOW()
 
     // See the documentation https://nextflow-io.github.io/nf-validation/samplesheets/fromSamplesheet/
     Channel

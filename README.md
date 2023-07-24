@@ -5,8 +5,11 @@
 - It removes email and slack integration for simplicity
 - It is generated using the template it should be compatible with `nf-core sync` for the foreseeable future
 - It uses the `nf-validate` plugin to reduce boilerplate code
-- It removes some additional files such as `docs/` for simplicity
+- It removes some additional files such as `docs/`
+- It uses Nextflow code to replace the Java classes in `lib/` (see [the initialise subworkflow](./subworkflows/local/initialise/main.nf))
 - It uses `results` as a default value for `--outdir` to remove one additional parameter uses need to supply
+
+You probably shouldn't use this, but it's a good POC for how simple nf-core could be in future.
 
 I have adapted Ken Brewer's instructions for cloning his template below but updated them for this repo:
 
