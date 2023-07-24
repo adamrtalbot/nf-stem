@@ -1,19 +1,44 @@
 ## Introduction
 
-**adamrtalbot/nfstem** is a bioinformatics pipeline that ...
+**adamrtalbot/nfstem** is a minimal nf-core pipeline containing as few components as possible. The idea is to be as light as possible while maintaining compatibility with nf-core tools such as modules and subworkflows. You could use this as a template to start your own pipeline or explore alternative methods of working with the nf-core template. It is inspired by [kenibrewer/simplenextflow](https://github.com/kenibrewer/simplenextflow) but it has the following differences:
 
-<!-- TODO nf-core:
-   Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
-   major pipeline sections and the types of output it produces. You're giving an overview to someone new
-   to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
--->
+- It removes email and slack integration for simplicity
+- It is generated using the template it should be compatible with `nf-core sync` for the foreseeable future
+- It uses the `nf-validate` plugin to reduce boilerplate code
+- It removes some additional files such as `docs/` for simplicity
+- It uses `results` as a default value for `--outdir` to remove one additional parameter uses need to supply
 
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
+I have adapted Ken Brewer's instructions for cloning his template below but updated them for this repo:
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+## Template instructions:
+
+### Make your own repo
+
+- [ ] Fork the repo to your own organisation and change the name to something appropriate
+
+### Template Naming
+
+- [ ] Replace all instances of `nf-stem` with the name of your pipeline
+- [ ] Replace all instances of `adamrtalbot` with your GitHub username/organization
+
+### Samplesheet handling
+
+- [ ] Update the `assets/schema_input.json` for your own samplesheet. Use the [nf-validate documentation](https://nextflow-io.github.io/nf-validation/nextflow_schema/sample_sheet_schema_specification/) to guide you.
+
+### Add needed modules/processes
+
+- [ ] Add any needed nf-core modules via the cli command `nf-core modules install`
+- [ ] Add any custom processes to the `modules/local` directory
+- [ ] Add and required software to the `environment.yml` file to be installed via conda or wave containers
+
+### Modify the main workflow
+
+- [ ] Modify the `main.nf` file to add any needed processes
+
+### Documentation
+
+- [ ] Search for `TODO` and replace with your own content
+- [ ] Delete this section of the README
 
 ## Usage
 
@@ -21,9 +46,6 @@
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how
 > to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline)
 > with `-profile test` before running the workflow on actual data.
-
-<!-- TODO nf-core: Describe the minimum required steps to execute the pipeline, e.g. how to prepare samplesheets.
-     Explain what rows and columns represent. For instance (please edit as appropriate):
 
 First, prepare a samplesheet with your input data that looks as follows:
 
@@ -34,19 +56,12 @@ sample,fastq_1,fastq_2
 CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
 ```
 
-Each row represents a fastq file (single-end) or a pair of fastq files (paired end).
-
--->
-
 Now, you can run the pipeline using:
-
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
 nextflow run adamrtalbot/nfstem \
    -profile <docker/singularity/.../institute> \
-   --input samplesheet.csv \
-   --outdir <OUTDIR>
+   --input samplesheet.csv
 ```
 
 > **Warning:**
@@ -60,18 +75,13 @@ adamrtalbot/nfstem was originally written by Adam Talbot.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+- Ken Brewer (@kenibrewer)
 
 ## Contributions and Support
 
 If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
 
 ## Citations
-
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use  adamrtalbot/nfstem for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
-
-<!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
 
