@@ -37,7 +37,7 @@ class WorkflowMain {
 
         // Check that conda channels are set-up correctly
         if (workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1) {
-            Utils.checkCondaChannels(log)
+            NfcoreTemplate.checkCondaChannels(log)
         }
 
         // Check AWS batch settings
