@@ -85,12 +85,6 @@
                     "fa_icon": "fas fa-question-circle",
                     "hidden": true
                 },
-                "citation": {
-                    "type": "boolean",
-                    "description": "Display citation.",
-                    "hidden": true,
-                    "fa_icon": "fas fa-user-edit"
-                },
                 "publish_dir_mode": {
                     "type": "string",
                     "default": "copy",

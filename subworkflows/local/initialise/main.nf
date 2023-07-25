@@ -2,15 +2,13 @@ include { paramsHelp } from 'plugin/nf-validation'
 
 workflow INITIALISE_WORKFLOW {
 
-    if ( params.citation ) {
-        // Print citation for nf-core
-        def citation = "If you use ${workflow.manifest.name} for your analysis please cite:\n\n" +
-            "* The nf-core framework\n" +
-            "  https://doi.org/10.1038/s41587-020-0439-x\n\n" +
-            "* Software dependencies\n" +
-            "  https://github.com/${workflow.manifest.name}/blob/master/CITATIONS.md"
-        log.info citation
-    }
+    // Print citation for nf-core
+    def citation = "If you use ${workflow.manifest.name} for your analysis please cite:\n\n" +
+        "* The nf-core framework\n" +
+        "  https://doi.org/10.1038/s41587-020-0439-x\n\n" +
+        "* Software dependencies\n" +
+        "  https://github.com/${workflow.manifest.name}/blob/master/CITATIONS.md"
+    log.info citation
 
     // Print help message if needed
     if (params.help) {
