@@ -10,6 +10,8 @@
 
 ## Pipeline tools
 
+- [fq](https://github.com/stjude-rust-labs/fq)
+
 ## Software packaging/containerisation tools
 
 - [Anaconda](https://anaconda.com)
