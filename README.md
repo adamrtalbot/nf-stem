@@ -2,14 +2,21 @@
 
 **nf-stem** is a minimal nf-core pipeline containing as few components as possible. The idea is to be as light as possible while maintaining compatibility with nf-core tools such as modules and subworkflows. You could use this as a template to start your own pipeline or explore alternative methods of working with the nf-core template. It is inspired by [kenibrewer/simplenextflow](https://github.com/kenibrewer/simplenextflow) but it has the following differences:
 
-- It removes email and slack integration for simplicity
-- It is generated using the template it should be compatible with `nf-core sync` for the foreseeable future
+- It is generated using the template and should be compatible with `nf-core sync` for the foreseeable future
 - It uses the `nf-validate` plugin to reduce boilerplate code
 - It removes some additional files such as `docs/`
 - It uses Nextflow code to replace the Java classes in `lib/` (see [the initialise subworkflow](./subworkflows/local/initialise/main.nf))
-- It uses `results` as a default value for `--outdir` to remove one additional parameter uses need to supply
+- It uses `results` as a default value for `--outdir` to remove one additional parameter user need to supply
+- It removes email and slack integration for simplicity
+- It removes Github features so developers can add their own
 
-You probably shouldn't use this, but it's a good POC for how simple nf-core could be in future.
+You probably shouldn't use this, it's a good POC for how simple nf-core could be in future. If you think you can simplify it, open a PR!
+
+### Potential simplifications:
+
+- Remove, move or reduce editor files to make the repo look less messy
+- Combine documentation into fewer files to reduce documentation overhead
+- Simplify the contents of the Nextflow code itself
 
 I have adapted Ken Brewer's instructions for cloning his template below but updated them for this repo:
 
