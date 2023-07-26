@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/adamrtalbot/nfstem/master/assets/schema_input.json",
-    "title": "adamrtalbot/nfstem pipeline - params.input schema",
+    "$id": "https://raw.githubusercontent.com/adamrtalbot/nf-stem/master/assets/schema_input.json",
+    "title": "adamrtalbot/nf-stem pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
@@ -10,25 +10,36 @@
             "sample": {
                 "type": "string",
                 "pattern": "^\\S+$",
-                "errorMessage": "Sample name must be provided and cannot contain spaces"
+                "errorMessage": "Sample name must be provided and cannot contain spaces",
+                "unique": ["fastq_1", "fastq_2"],
+                "meta": ["id"]
             },
             "fastq_1": {
                 "type": "string",
                 "pattern": "^\\S+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+                "format": "file-path",
+                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'",
+                "unique": ["fastq_2"]
             },
             "fastq_2": {
                 "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'",
+                "dependentRequired": ["fastq_1"],
                 "anyOf": [
                     {
                         "type": "string",
-                        "pattern": "^\\S+\\.f(ast)?q\\.gz$"
+                        "pattern": "^\\S+\\.f(ast)?q\\.gz$",
+                        "format": "file-path"
                     },
                     {
                         "type": "string",
                         "maxLength": 0
                     }
                 ]
+            },
+            "meta_value": {
+                "type": "string",
+                "errorMessage": "Additional meta_value must be supplied (for demonstration purposes).",
+                "meta": ["metavalue"]
             }
         },
         "required": ["sample", "fastq_1"]
