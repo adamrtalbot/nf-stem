@@ -1,0 +1,58 @@
+nextflow_pipeline {
+
+    name "Test INITIALISE"
+    script "subworkflows/local/initialise.nf"
+
+    test("Should run without failures") {
+
+        then {
+            assert workflow.success
+            assert snapshot(workflow).match()
+        }
+
+    }
+
+    test("Should show help") {
+        when {
+            params {
+                help = true
+            }
+        }
+
+        then {
+            assert workflow.success
+            assert snapshot(workflow).match()
+        }
+
+    }
+
+    test("Should show version") {
+        when {
+            params {
+                version = true
+            }
+        }
+
+        then {
+            assert workflow.success
+            assert snapshot(workflow).match()
+        }
+
+    }
+
+    test("Should fail because no params.input") {
+        when {
+            params {
+                input = null
+            }
+        }
+
+        then {
+            assert workflow.failed
+            assert workflow.exitStatus == 1
+            assert snapshot(workflow).match()
+        }
+
+    }
+
+}

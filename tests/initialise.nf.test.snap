@@ -1,0 +1,110 @@
+{
+    "Should show help": {
+        "content": [
+            {
+                "stderr": [
+                    
+                ],
+                "errorReport": "",
+                "exitStatus": 0,
+                "out": {
+                    
+                },
+                "failed": false,
+                "stdout": [
+                    
+                ],
+                "errorMessage": "",
+                "trace": {
+                    "tasksFailed": 0,
+                    "tasksCount": 0,
+                    "tasksSucceeded": 0
+                },
+                "name": "workflow",
+                "success": true
+            }
+        ],
+        "timestamp": "2023-07-26T13:34:15+0000"
+    },
+    "Should fail because no params.input": {
+        "content": [
+            {
+                "stderr": [
+                    
+                ],
+                "errorReport": "",
+                "exitStatus": 1,
+                "out": {
+                    
+                },
+                "failed": true,
+                "stdout": [
+                    "Please provide an input samplesheet to the pipeline e.g. '--input samplesheet.csv'"
+                ],
+                "errorMessage": "",
+                "trace": {
+                    "tasksFailed": 0,
+                    "tasksCount": 0,
+                    "tasksSucceeded": 0
+                },
+                "name": "workflow",
+                "success": false
+            }
+        ],
+        "timestamp": "2023-07-26T13:34:15+0000"
+    },
+    "Should run without failures": {
+        "content": [
+            {
+                "stderr": [
+                    
+                ],
+                "errorReport": "",
+                "exitStatus": 0,
+                "out": {
+                    
+                },
+                "failed": false,
+                "stdout": [
+                    
+                ],
+                "errorMessage": "",
+                "trace": {
+                    "tasksFailed": 0,
+                    "tasksCount": 0,
+                    "tasksSucceeded": 0
+                },
+                "name": "workflow",
+                "success": true
+            }
+        ],
+        "timestamp": "2023-07-26T13:34:15+0000"
+    },
+    "Should show version": {
+        "content": [
+            {
+                "stderr": [
+                    
+                ],
+                "errorReport": "",
+                "exitStatus": 0,
+                "out": {
+                    
+                },
+                "failed": false,
+                "stdout": [
+                    
+                ],
+                "errorMessage": "",
+                "trace": {
+                    "tasksFailed": 0,
+                    "tasksCount": 0,
+                    "tasksSucceeded": 0
+                },
+                "name": "workflow",
+                "success": true
+            }
+        ],
+        "timestamp": "2023-07-26T13:34:15+0000"
+    }
+}

@@ -1,6 +1,6 @@
 include { paramsHelp } from 'plugin/nf-validation'
 
-workflow INITIALISE_WORKFLOW {
+workflow INITIALISE {
 
     // Print citation for nf-core
     def citation = "If you use ${workflow.manifest.name} for your analysis please cite:\n\n" +
@@ -45,7 +45,11 @@ workflow INITIALISE_WORKFLOW {
 
     // Check input has been provided
     if (!params.input) {
-        Nextflow.error("Please provide an input samplesheet to the pipeline e.g. '--input samplesheet.csv'")
+        error "Please provide an input samplesheet to the pipeline e.g. '--input samplesheet.csv'"
     }
 
+}
+
+workflow {
+    INITIALISE()
 }

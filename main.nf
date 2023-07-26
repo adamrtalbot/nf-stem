@@ -3,7 +3,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     nf-stem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/adamrtalbot/nfstem
+    Github : https://github.com/adamrtalbot/nf-stem
 ----------------------------------------------------------------------------------------
 */
 
@@ -18,7 +18,7 @@ include { validateParameters; paramsSummaryLog; fromSamplesheet } from 'plugin/n
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
- include { INITIALISE_WORKFLOW } from './subworkflows/local/initialise/main'
+ include { INITIALISE          } from './subworkflows/local/initialise'
 
  include { FQ_LINT             } from './modules/nf-core/fq/lint/main'
 
@@ -36,7 +36,7 @@ workflow NFSTEM {
 
     ch_versions = Channel.empty()
 
-    INITIALISE_WORKFLOW()
+    INITIALISE()
 
     // See the documentation https://nextflow-io.github.io/nf-validation/samplesheets/fromSamplesheet/
     Channel
