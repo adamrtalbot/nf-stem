@@ -7,14 +7,16 @@ nextflow_pipeline {
 
         when {
             params {
-                // define parameters here. Example:
-                // outdir = "tests/results"
+                outdir = "tests/results"
             }
         }
 
         then {
             assert workflow.success
-            assert snapshot(workflow).match()
+            assert snapshot(
+                workflow,
+                path(params.outdir).list()
+            ).match()
         }
 
     }

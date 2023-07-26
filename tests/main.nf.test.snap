@@ -3,16 +3,16 @@
         "content": [
             {
                 "stderr": [
-                    
+
                 ],
                 "errorReport": "",
                 "exitStatus": 0,
                 "out": {
-                    
+
                 },
                 "failed": false,
                 "stdout": [
-                    
+
                 ],
                 "errorMessage": "",
                 "trace": {
@@ -22,8 +22,20 @@
                 },
                 "name": "workflow",
                 "success": true
-            }
+            },
+            [
+                [
+                    "SAMPLE1_PE.fq_lint.txt:md5,8e9f514ac9cf94d1839b9f9ace15f0a6",
+                    "SAMPLE2_PE.fq_lint.txt:md5,0965259fbc1968023de1c4b7b9e0b751",
+                    "SAMPLE3_SE.fq_lint.txt:md5,3681f6733285248dbbbf02e211ec66b5"
+                ],
+                [
+                    "execution_report_2023-07-26_14-44-02.html:md5,e85c5bdf269fa00b49a52f27d2a753a3",
+                    "execution_timeline_2023-07-26_14-44-02.html:md5,7f00bf07c2b9103f0f8979eff8bc22c5",
+                    "pipeline_dag_2023-07-26_14-44-02.html:md5,84034f9a21b1d135d685231ec4aacba1"
+                ]
+            ]
         ],
-        "timestamp": "2023-07-26T13:34:44+0000"
+        "timestamp": "2023-07-26T13:44:08+0000"
     }
 }
