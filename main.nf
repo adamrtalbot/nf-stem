@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    adamrtalbot/nfstem
+    nf-stem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Github : https://github.com/adamrtalbot/nfstem
 ----------------------------------------------------------------------------------------
@@ -19,6 +19,7 @@ include { validateParameters; paramsSummaryLog; fromSamplesheet } from 'plugin/n
 */
 
  include { INITIALISE_WORKFLOW } from './subworkflows/local/initialise/main'
+
  include { FQ_LINT             } from './modules/nf-core/fq/lint/main'
 
 
