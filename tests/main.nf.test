@@ -13,10 +13,7 @@ nextflow_pipeline {
 
         then {
             assert workflow.success
-            assert snapshot(
-                workflow,
-                path(params.outdir).list()
-            ).match()
+            assert snapshot(workflow).match()
         }
 
     }
