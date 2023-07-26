@@ -5,7 +5,7 @@
 - It is generated using the template and should be compatible with `nf-core sync` for the foreseeable future
 - It uses the `nf-validate` plugin to reduce boilerplate code
 - It removes some additional files such as `docs/`
-- It uses Nextflow code to replace the Java classes in `lib/` (see [the initialise subworkflow](./subworkflows/local/initialise/main.nf))
+- It uses Nextflow code to replace the Java classes in `lib/` (see [the initialise subworkflow](./subworkflows/local/initialise.nf))
 - It uses `results` as a default value for `--outdir` to remove one additional parameter user need to supply
 - It removes email and slack integration for simplicity
 - It removes Github features so developers can add their own
@@ -69,7 +69,7 @@ CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
 Now, you can run the pipeline using:
 
 ```bash
-nextflow run adamrtalbot/nfstem \
+nextflow run adamrtalbot/nf-stem \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv
 ```
@@ -81,7 +81,7 @@ nextflow run adamrtalbot/nfstem \
 
 ## Credits
 
-adamrtalbot/nfstem was originally written by Adam Talbot.
+adamrtalbot/nf-stem was originally written by Adam Talbot.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 

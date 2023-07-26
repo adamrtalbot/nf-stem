@@ -1,6 +1,6 @@
 {
-    "name": "adamrtalbot/nfstem",
-    "homePage": "https://github.com/adamrtalbot/nfstem",
+    "name": "adamrtalbot/nf-stem",
+    "homePage": "https://github.com/adamrtalbot/nf-stem",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {

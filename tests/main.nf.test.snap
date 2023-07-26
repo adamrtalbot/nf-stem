@@ -1,0 +1,29 @@
+{
+    "Should run without failures": {
+        "content": [
+            {
+                "stderr": [
+                    
+                ],
+                "errorReport": "",
+                "exitStatus": 0,
+                "out": {
+                    
+                },
+                "failed": false,
+                "stdout": [
+                    
+                ],
+                "errorMessage": "",
+                "trace": {
+                    "tasksFailed": 0,
+                    "tasksCount": 4,
+                    "tasksSucceeded": 4
+                },
+                "name": "workflow",
+                "success": true
+            }
+        ],
+        "timestamp": "2023-07-26T13:54:44+0000"
+    }
+}

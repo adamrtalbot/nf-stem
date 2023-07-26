@@ -1,5 +1,6 @@
 name: nf-test
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
@@ -18,6 +19,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       NXF_ANSI_LOG: false
+      NXF_SINGULARITY_CACHEDIR: ${{ github.workspace }}/.singularity
     strategy:
       matrix:
         profile:
@@ -59,7 +61,7 @@ jobs:
 
       - name: Set up Singularity
         if: matrix.profile == 'singularity'
-        uses: eWaterCycle/setup-singularity@v5
+        uses: eWaterCycle/setup-singularity@v7
         with:
           singularity-version: 3.7.1
 

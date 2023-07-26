@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/adamrtalbot/nfstem/master/nextflow_schema.json",
-    "title": "adamrtalbot/nfstem pipeline parameters",
+    "$id": "https://raw.githubusercontent.com/adamrtalbot/nf-stem/master/nextflow_schema.json",
+    "title": "adamrtalbot/nf-stem pipeline parameters",
     "description": "Minimal nf-core pipeline compatible with template",
     "type": "object",
     "definitions": {
