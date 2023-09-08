@@ -28,6 +28,46 @@
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
+                },
+                "trimmer": {
+                    "type": "string",
+                    "default": "fastp",
+                    "description": "Trimmer to use",
+                    "enum": ["fastp", "trimgalore"],
+                    "fa_icon": "fas fa-cut"
+                },
+                "adapter_fasta": {
+                    "type": "string",
+                    "format": "file-path"
+                },
+                "skip_fastqc": {
+                    "type": "boolean"
+                },
+                "umi": {
+                    "type": "boolean"
+                },
+                "skip_umi_extract": {
+                    "type": "boolean"
+                },
+                "umi_discard_read": {
+                    "type": "integer",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 2
+                },
+                "skip_trimming": {
+                    "type": "boolean"
+                },
+                "save_trimmed_fail": {
+                    "type": "boolean"
+                },
+                "save_merged": {
+                    "type": "boolean"
+                },
+                "min_trimmed_reads": {
+                    "type": "integer",
+                    "default": 0,
+                    "minimum": 0
                 }
             }
         },
