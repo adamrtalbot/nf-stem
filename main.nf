@@ -18,8 +18,8 @@ include { validateParameters; paramsSummaryLog; fromSamplesheet } from 'plugin/n
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
- include { INITIALISE                       } from './subworkflows/local/initialise'
- include { TRIM                             } from './workflows/main'
+ include { TRIM                             } from './workflows/trim/main'
+ include { INITIALISE                       } from './subworkflows/local/initialise/main'
  include { FQ_LINT                          } from './modules/nf-core/fq/lint/main'
  include { MULTIQC                          } from './modules/nf-core/multiqc/main'
 
