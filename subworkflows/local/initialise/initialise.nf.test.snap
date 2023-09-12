@@ -7,12 +7,9 @@
                 ],
                 "errorReport": "",
                 "exitStatus": 0,
-                "out": {
-                    
-                },
                 "failed": false,
                 "stdout": [
-                    
+                    "Could not read parameters settings from JSON. java.nio.file.NoSuchFileException: /Users/adam.talbot/nf-stem/subworkflows/local/initialise/nextflow_schema.json"
                 ],
                 "errorMessage": "",
                 "trace": {
@@ -24,7 +21,7 @@
                 "success": true
             }
         ],
-        "timestamp": "2023-07-26T13:34:15+0000"
+        "timestamp": "2023-09-12T12:10:53.526692"
     },
     "Should fail because no params.input": {
         "content": [
@@ -34,9 +31,6 @@
                 ],
                 "errorReport": "",
                 "exitStatus": 1,
-                "out": {
-                    
-                },
                 "failed": true,
                 "stdout": [
                     "Please provide an input samplesheet to the pipeline e.g. '--input samplesheet.csv'"
@@ -51,7 +45,7 @@
                 "success": false
             }
         ],
-        "timestamp": "2023-07-26T13:34:15+0000"
+        "timestamp": "2023-09-12T12:10:57.376616"
     },
     "Should run without failures": {
         "content": [
@@ -61,12 +55,11 @@
                 ],
                 "errorReport": "",
                 "exitStatus": 0,
-                "out": {
-                    
-                },
                 "failed": false,
                 "stdout": [
-                    
+                    "WARN: There's no process matching config selector: FASTP",
+                    "WARN: There's no process matching config selector: FASTQC",
+                    "WARN: There's no process matching config selector: TRIMGALORE"
                 ],
                 "errorMessage": "",
                 "trace": {
@@ -78,7 +71,7 @@
                 "success": true
             }
         ],
-        "timestamp": "2023-07-26T13:34:15+0000"
+        "timestamp": "2023-09-12T12:10:51.5897"
     },
     "Should show version": {
         "content": [
@@ -88,9 +81,6 @@
                 ],
                 "errorReport": "",
                 "exitStatus": 0,
-                "out": {
-                    
-                },
                 "failed": false,
                 "stdout": [
                     
@@ -105,6 +95,6 @@
                 "success": true
             }
         ],
-        "timestamp": "2023-07-26T13:34:15+0000"
+        "timestamp": "2023-09-12T12:10:55.47093"
     }
 }
