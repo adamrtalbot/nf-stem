@@ -1,7 +1,8 @@
 nextflow_pipeline {
 
-    name "Test INITIALISE"
-    script "subworkflows/local/initialise.nf"
+    name "Test Subworkflow INITIALISE"
+    script "subworkflows/local/initialise/main.nf"
+    // workflow 'INITIALISE'
 
     test("Should run without failures") {
 

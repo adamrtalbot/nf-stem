@@ -7,9 +7,6 @@
                 ],
                 "errorReport": "",
                 "exitStatus": 0,
-                "out": {
-                    
-                },
                 "failed": false,
                 "stdout": [
                     
@@ -17,13 +14,13 @@
                 "errorMessage": "",
                 "trace": {
                     "tasksFailed": 0,
-                    "tasksCount": 4,
-                    "tasksSucceeded": 4
+                    "tasksCount": 11,
+                    "tasksSucceeded": 11
                 },
                 "name": "workflow",
                 "success": true
             }
         ],
-        "timestamp": "2023-07-26T13:54:44+0000"
+        "timestamp": "2023-09-12T11:43:37.103096"
     }
 }
