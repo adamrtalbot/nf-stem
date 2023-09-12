@@ -2,10 +2,10 @@
 // Read QC, UMI extraction and trimming
 //
 
-include { FASTQC as FASTQC_RAW  } from '../../../modules/nf-core/fastqc/main'
-include { FASTQC as FASTQC_TRIM } from '../../../modules/nf-core/fastqc/main'
-include { UMITOOLS_EXTRACT      } from '../../../modules/nf-core/umitools/extract/main'
-include { FASTP                 } from '../../../modules/nf-core/fastp/main'
+include { FASTQC as FASTQC_RAW  } from '../../../modules/nf-core/fastqc/'
+include { FASTQC as FASTQC_TRIM } from '../../../modules/nf-core/fastqc/'
+include { UMITOOLS_EXTRACT      } from '../../../modules/nf-core/umitools/extract/'
+include { FASTP                 } from '../../../modules/nf-core/fastp/'
 
 //
 // Function that parses fastp json output file to get total number of reads after trimming

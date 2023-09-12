@@ -18,10 +18,10 @@ include { validateParameters; paramsSummaryLog; fromSamplesheet } from 'plugin/n
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
- include { TRIM                             } from './workflows/trim/main'
- include { INITIALISE                       } from './subworkflows/local/initialise/main'
- include { FQ_LINT                          } from './modules/nf-core/fq/lint/main'
- include { MULTIQC                          } from './modules/nf-core/multiqc/main'
+ include { TRIM                             } from './workflows/trim/'
+ include { INITIALISE                       } from './subworkflows/local/initialise/'
+ include { FQ_LINT                          } from './modules/nf-core/fq/lint/'
+ include { MULTIQC                          } from './modules/nf-core/multiqc/'
 
 
 // Print parameter summary log to screen before running
